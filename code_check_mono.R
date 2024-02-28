@@ -13,7 +13,7 @@ for (j in 1:length(common_prefix)) {
   vect <- birds[grepl(common_prefix[j], birds)]
   all_of_sp <- c(all_of_sp, list(vect))
 }
-all_of_sp <- list()
+all_of_mono <- list()
 for (i in 1:length(all_of_sp)) {
   if (length(all_of_sp[[i]])>1){
     
