@@ -1,5 +1,8 @@
+'''
+this will not prune. just point out the clades that can be pruned. 
+'''
 library("phytools") #includes ape
-setwd("C:/Users/mdrmi/Downloads/Phylogenetic trees used for global analysis of island birds/Phylogenetic trees used for global analysis of island birds/Maximum clade credibility trees/")
+setwd("directory_in_which_trees_are_located")
 
 check_monophyly <- function(tree_file_name){
 
