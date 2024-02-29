@@ -1,6 +1,9 @@
 library("phytools") #includes ape
 setwd("C:/Users/mdrmi/Downloads/Phylogenetic trees used for global analysis of island birds/Phylogenetic trees used for global analysis of island birds/Maximum clade credibility trees/")
-acrocephalus_tree<-read.nexus("Acrocephalus_maxcred.tre")
+
+check_monophyly <- function(tree_file_name){
+
+X_tree<-read.nexus(tree)
 
 birds <- acrocephalus_tree$tip.label
 label_parts <- strsplit(birds, "_")
@@ -27,29 +30,37 @@ to_inspect <- c()
 
 for (i in 1:length(all_of_mono)) {
   if (is.monophyletic(acrocephalus_tree, all_of_mono[[i]])) {
-    print("is mono buh")
-    to_prune <- append(to_prune, list(all_of_mono[[i]]))
+    to_prune <- c(to_prune,list(all_of_mono[[i]]) )
   } else {
-    to_inspect <- append(to_inspect, list(all_of_mono[[i]]))
+    to_inspect <- c(to_inspect, list(all_of_mono[[i]]))
+  }
+}
+#to inspect 11, to prune 30, to now good. 
+lost_case_ask_ben <- list()
+
+still_hope <- list()
+
+
+
+
+lost_case_ask_ben <- list()
+still_hope <- list()
+
+for (z in 1:length(to_inspect)) {
+  label_parts <- strsplit(as.character(to_inspect[[z]]), "_")
+  common_prefix <- sapply(label_parts, function(x) paste(x[3], sep = "_"))
+  
+  if (length(common_prefix) == length(unique(common_prefix))) {
+    lost_case_ask_ben <- c(lost_case_ask_ben, list(to_inspect[[z]]))
+  } else {
+    still_hope <- c(still_hope, list(to_inspect[[z]]))
   }
 }
 
-#for (i in 1:length(all_of_mono)) {
- # label_parts <- strsplit(all_of_mono[[i]], "_")
-#  print(label_parts[[1]][[3]])
-#  vect <- all_of_mono[grepl(label_parts[[1]][[3]],all_of_mono)]
-#}
+}
 
 
 
-#subspecies <- list()
-
-#label_parts <- strsplit(all_of_mono, "_")
-#sub_geo <- sapply(label_parts, function(x) x[3])
-#sub_geo <- unique(sub_geo)
-
-#for (i in 1:length(sub_geo)) {
-#  vect <- birds[sub_geo[i] == sapply(label_parts, "[[", 3)]
-#  subspecies <- c(subspecies, list(vect))
-#}
-
+    
+    
+    
