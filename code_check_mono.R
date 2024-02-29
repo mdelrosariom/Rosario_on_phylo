@@ -28,15 +28,11 @@ to_inspect <- c()
 for (i in 1:length(all_of_mono)) {
   if (is.monophyletic(acrocephalus_tree, all_of_mono[[i]])) {
     print("is mono buh")
-    to_prune <- c(to_prune,list(all_of_mono[[i]]) )
+    to_prune <- append(to_prune, list(all_of_mono[[i]]))
   } else {
-    to_inspect <- c(to_inspect, list(all_of_mono[[i]]))
+    to_inspect <- append(to_inspect, list(all_of_mono[[i]]))
   }
 }
-
-
-
-
 
 #for (i in 1:length(all_of_mono)) {
  # label_parts <- strsplit(all_of_mono[[i]], "_")
@@ -56,13 +52,4 @@ for (i in 1:length(all_of_mono)) {
 #  vect <- birds[sub_geo[i] == sapply(label_parts, "[[", 3)]
 #  subspecies <- c(subspecies, list(vect))
 #}
-
-
-
-
-
-
-
-
-
 
