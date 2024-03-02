@@ -8,7 +8,7 @@ check_monophyly <- function(tree_file_name){
 
 X_tree<-read.nexus(tree)
 
-birds <- acrocephalus_tree$tip.label
+birds <- X_tree$tip.label
 label_parts <- strsplit(birds, "_")
 common_prefix <- sapply(label_parts, function(x) paste(x[1], x[2], sep = "_"))
 common_prefix <- unique(common_prefix)
