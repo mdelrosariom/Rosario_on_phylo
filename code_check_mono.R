@@ -1,69 +1,30 @@
-'''
-this will not prune. just point out the clades that can be pruned. 
-'''
-library("phytools") #includes ape
+library("phytools")
+library("SwimmeR")
 setwd("C:/Users/mdrmi/Downloads/Phylogenetic trees used for global analysis of island birds/Phylogenetic trees used for global analysis of island birds/Maximum clade credibility trees/")
 
-check_monophyly <- function(tree_file_name){
+check_monophyly <- function(tree_file_name) {
+  X_tree <- read.nexus(tree_file_name)
+  birds <- X_tree$tip.label #we work with the names of the tips
   
-  X_tree<-read.nexus(tree_file_name)
+  label_parts <- strsplit(birds, "_") # separate the names by the subscore
+  common_prefix <- sapply(label_parts, function(x) paste(x[1], x[2], sep = "_")) #check the name of the sps. 
+  common_prefix <- unique(common_prefix) #as sps. are repeated.
   
-  birds <- X_tree$tip.label
-  label_parts <- strsplit(birds, "_")
-  common_prefix <- sapply(label_parts, function(x) paste(x[1], x[2], sep = "_"))
-  common_prefix <- unique(common_prefix)
+  all_of_sp <- lapply(common_prefix, function(prefix) birds[grepl(prefix, birds)]) #combine in a list the same species
   
-  all_of_sp <- list()
+  all_of_mono <- all_of_sp[sapply(all_of_sp, function(x) length(x) > 1)] #if there are repeated sps.
   
-  for (j in 1:length(common_prefix)) {
-    vect <- birds[grepl(common_prefix[j], birds)]
-    all_of_sp <- c(all_of_sp, list(vect))
-  }
-  all_of_mono <- list()
-  for (i in 1:length(all_of_sp)) {
-    if (length(all_of_sp[[i]])>1){
-      
-      all_of_mono <- append(all_of_mono, list(all_of_sp[[i]]))
-    }
-  }
+  to_prune <- lapply(all_of_mono, function(x) if (is.monophyletic(X_tree, x)) x else NA) #monophyletic species can be pruned
+  still_hope <- lapply(all_of_mono, function(x) if (!is.monophyletic(X_tree, x)) x else NA) #this sps are divided into subspecies or by geographical region
+  #but their separation is too complicated and not wort it, so we need to check for monophyly by hand
+  lost_case_ask_ben <- lapply(still_hope, function(x) { #sps can have a taxonomic problem, so we need to ask ben or papers
+    if (length(unique(unlist(strsplit(as.character(x), "_")))) == length(unlist(strsplit(as.character(x), "_")))) x else NA
+  })
   
-  
-  to_prune <- c()
-  to_inspect <- c()
-  
-  for (i in 1:length(all_of_mono)) {
-    if (is.monophyletic(X_tree, all_of_mono[[i]])) {
-      to_prune <- c(to_prune,list(all_of_mono[[i]]) )
-    } else {
-      to_inspect <- c(to_inspect, list(all_of_mono[[i]]))
-    }
-  }
-  #to inspect 11, to prune 30, to now good. 
-  lost_case_ask_ben <- list()
-  
-  still_hope <- list()
-  
-  
-  
-  
-  lost_case_ask_ben <- list()
-  still_hope <- list()
-  
-  for (z in 1:length(to_inspect)) {
-    label_parts <- strsplit(as.character(to_inspect[[z]]), "_")
-    common_prefix <- sapply(label_parts, function(x) paste(x[3], sep = "_"))
-    
-    if (length(common_prefix) == length(unique(common_prefix))) {
-      lost_case_ask_ben <- c(lost_case_ask_ben, list(to_inspect[[z]]))
-    } else {
-      still_hope <- c(still_hope, list(to_inspect[[z]]))
-    }
-  }
-  return(list(monophyletic_clades = all_of_mono, prunable_clades = to_prune, 
-              possibly_monophyletic = still_hope, ask_ben = lost_case_ask_ben))
+  return(data.frame(
+    monophyletic_clades = I(all_of_mono), #I() because if not R will try to modify the lists, this is used when lists have different size. 
+    prunable_clades = I(to_prune),
+    possibly_monophyletic = I(still_hope),
+    ask_ben = I(lost_case_ask_ben)
+  ))
 }
-
-
-    
-    
-    
