@@ -1,12 +1,14 @@
 library(openxlsx)
 library(stringr)
 
-all_of_mono_list <- uno$all_of_mono
-to_prune_list <- uno$to_prune
-lost_case_ask_ben_list <- uno$lost_case_ask_ben
-still_hope_list <- uno$still_hope
+export_mono <- function(output_mono){
+#all this are lists of lists and we need to homogenize size for export
+all_of_mono_list <- output_mono$all_of_mono
+to_prune_list <- output_mono$to_prune
+lost_case_ask_ben_list <- output_mono$lost_case_ask_ben
+still_hope_list <- output_mono$still_hope
 
-# Find the maximum length among all lists
+#see which list inside the lists of lists is bigger
 max_length_ml <- max(sapply(all_of_mono_list, length))
 max_length_tp <- max(sapply(to_prune_list, length))
 max_length_lcab <- max(sapply(lost_case_ask_ben_list, length))
@@ -18,7 +20,7 @@ padded_data_tp <- lapply(to_prune_list, function(x) c(x, rep(NA, max_length_tp -
 padded_data_lcab <- lapply(lost_case_ask_ben_list, function(x) c(x, rep(NA, max_length_lcab - length(x))))
 padded_data_sh <- lapply(still_hope_list, function(x) c(x, rep(NA, max_length_sh - length(x))))
 
-# Convert the list of padded lists to a matrix
+# Convert the list of padded lists to a matrix idk why, but it works so ok. 
 matrix_ml <- matrix(unlist(padded_data_ml), nrow = max_length_ml, byrow = TRUE)
 matrix_tp <- matrix(unlist(padded_data_tp), nrow = max_length_tp, byrow = TRUE)
 matrix_lcab <- matrix(unlist(padded_data_lcab), nrow = max_length_lcab, byrow = TRUE)
@@ -30,12 +32,15 @@ df_tp <- data.frame(matrix_tp)
 df_lcab <- data.frame(matrix_lcab)
 df_sh <- data.frame(matrix_sh)
 
-# Extract common prefix for naming the file
+# for naming the file, we want the name of the tree
 label_parts <- strsplit(all_trees[1], "_")
 common_prefix <- sapply(label_parts, function(x) paste(x[1], sep = "_"))
 
-# Use the common prefix to create the file name
-name_of_file <- paste(common_prefix, "_monophyletic_info.xlsx", sep = "")
+# create the name of the file 
+name_of_file <- paste("C:/Users/mdrmi/OneDrive/Escritorio/info_about_mono/", "_monophyletic_info.xlsx", sep = "")
 
+#combine all dataframes and naming the names of the sheet 
 dataset_names <- list('all_monophyletic' = df_ml, 'to_prune' = df_tp, 'ask_ben' = df_lcab, 'still_hope' =df_sh)
-write.xlsx(dataset_names, file = name_of_file)
+
+#export 
+write.xlsx(dataset_names, file = name_of_file) }
