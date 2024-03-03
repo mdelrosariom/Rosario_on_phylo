@@ -1,12 +1,25 @@
-library(openxlsx)
-library(stringr)
-
 export_mono <- function(output_mono){
 #all this are lists of lists and we need to homogenize size for export
 all_of_mono_list <- output_mono$all_of_mono
 to_prune_list <- output_mono$to_prune
 lost_case_ask_ben_list <- output_mono$lost_case_ask_ben
 still_hope_list <- output_mono$still_hope
+#we need to put the next chunck for is the list are empty because if not it 
+#will not run because list empty so we will give it an element
+if (length(all_of_mono_list) == 0){
+  all_of_mono_list <- 0
+}
+if (length(to_prune_list) == 0){
+  to_prune_list <- 0
+}
+if (length(lost_case_ask_ben_list) == 0){
+  lost_case_ask_ben_list <- 0
+}
+
+if (length(still_hope_list) == 0){
+  still_hope_list<- 0
+}
+
 
 #see which list inside the lists of lists is bigger
 max_length_ml <- max(sapply(all_of_mono_list, length))
@@ -37,10 +50,11 @@ label_parts <- strsplit(all_trees[1], "_")
 common_prefix <- sapply(label_parts, function(x) paste(x[1], sep = "_"))
 
 # create the name of the file 
-name_of_file <- paste("C:/Users/mdrmi/OneDrive/Escritorio/info_about_mono/", "_monophyletic_info.xlsx", sep = "")
+name_of_file <- paste("C:/Users/mdrmi/OneDrive/Escritorio/info_about_mono/",common_prefix ,"_monophyletic_info.xlsx", sep = "")
 
 #combine all dataframes and naming the names of the sheet 
 dataset_names <- list('all_monophyletic' = df_ml, 'to_prune' = df_tp, 'ask_ben' = df_lcab, 'still_hope' =df_sh)
 
 #export 
 write.xlsx(dataset_names, file = name_of_file) }
+
