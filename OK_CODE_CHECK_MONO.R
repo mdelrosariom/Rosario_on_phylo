@@ -66,8 +66,7 @@ check_monophyly <- function(tree_name_file) {
   }
   return(list(
     all_of_mono = all_of_mono,
-    to_prune = to_prune,
-    to_inspect = to_inspect,
+    to_prune = to_prune,    
     lost_case_ask_ben = lost_case_ask_ben,
     still_hope = still_hope
   ))
