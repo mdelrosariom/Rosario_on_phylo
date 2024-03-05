@@ -27,7 +27,7 @@ for (t in 1:length(unique_species)) {
   #filter does not work
   #filtered_avonet_raw <- filter(avonet_raw, species_name == unique_species[2])
   #supposely %<% more tolerand and else 
-  filtered_avonet_raw <- avonet_raw[avonet_raw$species_name %in% unique_species[1], ]
+  filtered_avonet_raw <- avonet_raw[avonet_raw$species_name %in% unique_species[t], ]
 
   # Calculate mean, sd, and var for beak length culmen
   mean_BLC <- mean(as.numeric(filtered_avonet_raw$Beak.Length_Culmen),na.rm=TRUE)
