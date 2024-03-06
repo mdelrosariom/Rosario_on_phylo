@@ -1,6 +1,19 @@
 library(openxlsx)
 
-export_mono_2 <- function(output_mono, tree_name) {
+export_mono <- function(output_mono, tree_name) {
+  if (is.null(output_mono)){
+    file_name <- paste("C:/Users/mdrmi/OneDrive/Escritorio/info_about_mono/_NOT_PROBLEM_WMONO", tree_name, ".xlsx", sep = "")
+    write.xlsx(
+      list(
+        'all_monophyletic' = NULL,
+        'to_prune' = NULL,
+        'ask_ben' = NULL,
+        'still_hope' = NULL
+      ),
+      file = file_name
+    )
+    
+  }else{
   # Extract lists from the output
   all_of_mono_list <- output_mono$all_of_mono
   to_prune_list <- output_mono$to_prune
@@ -26,5 +39,5 @@ export_mono_2 <- function(output_mono, tree_name) {
     ),
     file = file_name
   )
-}
+}}
 
