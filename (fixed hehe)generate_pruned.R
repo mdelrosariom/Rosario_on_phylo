@@ -13,7 +13,7 @@ new_pruned <- function(tree_analyzed, name_of_tree) {
    kill_from_tree <- prunable_vect[prunable_vect != representative_individual]  
    #we prune the tree 
    Y_tree <- drop.tip(Y_tree,  kill_from_tree)
-   print(length(Y_tree$tip.label))
+ 
   }
   
   #and save it
