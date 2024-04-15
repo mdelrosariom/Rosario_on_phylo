@@ -1,0 +1,23 @@
+Questions for H&B 
+1. we should consider the archipielago (as valente) or individual islands. 
+2. in supplementary materials 1 thats all the info we need right? A (yes and in sup mat 2)
+3. in valente there are species not totally identify (ask Ben what we should do with them).Also islands without any sps (I.T. rapa_nui) ver que hacer con eso, si incluirla o no. 
+4. Valente trata a islas como archipielagos?? Mauritus.
+
+
+"initparsopt - these are the initial values from the parameters for which the likelihood will be optimised. In the examples below we will use parameters similar to the maximum likelihood parameters from the corresponding models in Etienne et al 2020. However, we recommend you try a variety of initial starting parameters to ensure the optimum is found. Note that certain combinations of initial starting values may fail, as parameters must be feasible (e.g. a K’ value lower than the number of species found in the data will not run). In DAISIE the parameters have the following position:"
+how to chose the parameters, what i need to see?? and what is the range of parameters??
+si uso idparsopt - The position of the parameters to optimise (e.g. to optimize cladogenesis and anagenesis only c(1,5). entonces no tengo que hacer lo de initial?? si no?? SOLVED! <3 
+
+we want DI OR DD 
+1. id understand what is initparsopt, idparsopt and, parsfix or how to find them SOLVED 
+2. preguntar a helene lo de los argumentos que no entiendo de daisie a ver si puede ayudar
+Yo dije 10 islas, preguntar si armamos grupos de dos con esas 10 archipielagos, uno en cada oceano (y asi tenemos replicados de lo que queriamos hacer al principio (serian 9 replicados, aunque puedo preguntar si pueden ser menos y todo bien). SOLVED
+3. prodemos hacer un resampling de la comparacion de las islas si hacemos una comparacion de 1-1 SOLVED, NO
+
+DUMMIE VARIABLES FOR THE AREA, INSOLATION, ETC. (that will also affect, but we will not consider that)
+
+6. dataset ok?? in branches says cladogenesis IDK why 
+
+21/02
+7. to employ ATE we need the .csv with the data and the sps in the tree to have the same names, there is not the case because there are like 10000 different species equal in valente that are not even monophyletic so i cant prune it. i should change the name of the traits and the phylogeny to match? i dont know how this will interfire with the processes. 

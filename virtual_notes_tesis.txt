@@ -1,0 +1,51 @@
+06/02/2024
+1.in DAISIE we have other islands like new zeland, macronesia
+
+
+
+
+########################12/02  Aldabra_Group
+T1
+c(0.44,0.11,36.44,0.0007,2) ->   
+   lambda_c        mu         K      gamma lambda_a    loglik df conv
+ 1 0.007188707 0.6577594 0.6788464 0.01649689 1.010624 -73.36048  5    0
+
+T2
+
+c(0.6,0.21,46.44,0.0017,4) -> 
+lambda_c        mu         K      gamma lambda_a    loglik df conv
+1 0.08748929 0.6559207 0.6157716 0.01648342 1.010423 -73.36048  5    0
+
+T3
+c(0.74,0.71,56.44,0.0057,5)
+
+ lambda_c        mu         K      gamma lambda_a    loglik df conv
+1 0.07461889 0.6565406 0.5203988 0.01648796 1.010509 -73.36048  5    0
+
+Error: in ‘subplex’: illegal input detected before taking any integration steps - see written message
+
+### 
+when i tried to run it in aldabra,azores,bermuda problem with availability of data
+Error in DAISIE_loglik_IW(pars1 = pars1, pars2 = pars2, datalist = datalist,  : 
+  IW does not work on data with unknown colonization times.
+
+
+### 13/02
+the initial parameters for chrismas islands were not the originals proposed by ettiene et al., i needed to modify those. also they are super suceptible to the values, i.e. the range of them is so much sreach that in the case of others (dicho en criollo, no podes poner cualquier cagada y anda digamo) but the maximum achieved is always the same so good. 
+
+
+in hawaii Warning: The number of missing species is quite low relative to the
+        resolution of the ODE.
+
+
+in rodrigues DLSODES- Warning..Internal T (=R1) and H (=R2) are
+      such that in the machine, T + H = T on the next step  
+     (H = step size). Solver will continue anyway.
+In above message, R1 = -8.61, R2 = 3.77331e-16
+
+
+
+
+
+
+

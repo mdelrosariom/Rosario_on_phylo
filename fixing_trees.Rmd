@@ -1,0 +1,109 @@
+
+```{r functions, packages and directories}
+#For all the phylogenetic functions
+library("phytools")
+#open excels
+library("openxlsx")
+#manipulate strings
+library("stringr")
+
+source("C:/Users/mdrmi/OneDrive/Escritorio/codes_phylo/UPDATED_check_monophyly.R")
+#tp prune the prunabble (monophyletic) branches
+source("C:/Users/mdrmi/OneDrive/Escritorio/codes_phylo/generate_pruned.R")
+#to delete still hope 
+source("C:/Users/mdrmi/OneDrive/Escritorio/codes_phylo/drop_still_hope.R")
+#to change tips
+source("C:/Users/mdrmi/OneDrive/Escritorio/codes_phylo/change_tips.R")
+#to change the directory for all the future chunks
+knitr::opts_knit$set(root.dir = "C:/Users/mdrmi/OneDrive/Escritorio/trees")
+
+```
+
+
+```{r Cisticola_maxcred.tre}
+setwd("C:/Users/mdrmi/OneDrive/Escritorio/trees")
+list.files()
+tree<- read.nexus("Cisticola_maxcred.tre")
+tree_analyzed <- check_monophyly("Cisticola_maxcred.tre")
+
+is.monophyletic(tree, "Cisticola_juncidis_AJ004314", "Cisticola_juncidis_HQ608851",
+                +                 "Cisticola_juncidis_Z73474", "Cisticola_juncidis_juncidis_DQ008493" )
+#[1] TRUEx
+is.monophyletic( tree, "Cisticola_juncidis_brunniceps_AB239499", 
+                 +                  "Cisticola_juncidis_brunniceps_AB239500",  "Cisticola_juncidis_brunniceps_AB239501" )
+#[1] TRUEx
+is.monophyletic(tree,"Cisticola_juncidis_tinnabulans_AB239502",
+                + "Cisticola_juncidis_tinnabulans_AB239503", "Cisticola_juncidis_tinnabulans_AB239504")
+#[1] TRUE
+
+#first prune monophyletic
+
+pruned_of_mono_groups <- new_pruned(tree_analyzed, "Cisticola_maxcred.tre")
+tree <- read.nexus("C:/Users/mdrmi/OneDrive/Escritorio/trees_reunion_703/Cisticola_maxcred.tre_pruned.tree")
+
+##prune the still hope 
+vector<- c("Cisticola_juncidis_AJ004314", "Cisticola_juncidis_HQ608851",
+                           "Cisticola_juncidis_Z73474", "Cisticola_juncidis_juncidis_DQ008493" )
+tree <-drop_still_hope(vector,tree)
+
+vector2 <- c("Cisticola_juncidis_brunniceps_AB239499", 
+                              "Cisticola_juncidis_brunniceps_AB239500",  "Cisticola_juncidis_brunniceps_AB239501" )
+tree<-drop_still_hope(vector2,tree)
+
+vector3 <- c("Cisticola_juncidis_tinnabulans_AB239502",
+"Cisticola_juncidis_tinnabulans_AB239503", "Cisticola_juncidis_tinnabulans_AB239504")
+tree<- drop_still_hope(vector3, tree)
+
+tree <-change_tips(tree)
+
+writeNexus(tree, file="C:/Users/mdrmi/OneDrive/Escritorio/trees_fixed/Cisticola_maxcred.tre")
+
+```
+
+
+```{r Clytorhynchus_maxcred.tre}
+tree <- read.nexus("C:/Users/mdrmi/OneDrive/Escritorio/trees/Clytorhynchus_maxcred.tre")
+tree_analyzed <- check_monophyly("C:/Users/mdrmi/OneDrive/Escritorio/trees/Clytorhynchus_maxcred.tre")
+
+pruned_of_mono_groups <- new_pruned(tree_analyzed, "Clytorhynchus_maxcred.tre")
+
+```
+
+
+```{r Coccyzus_maxcred.tre}
+# Set the working directory
+setwd("C:/Users/mdrmi/OneDrive/Escritorio/trees")
+read.nexus("Lanius_maxcred.tre" )
+read.nexus("Coccyzus_maxcred.tre")
+# Load necessary libraries
+library(phytools)
+read.nexus("Coccyzus_maxcred.tre")
+tree_analyzed <- check_monophyly("Coccyzus_maxcred.tre")
+
+tree <- new_pruned(tree_analyzed, "C:/Users/mdrmi/OneDrive/Escritorio/trees/Coccyzus_maxcred.tre")
+
+                      
+ 
+ is.monophyletic(tree,"Coccyzus_americanus_AF204993",                       
+  "Coccyzus_americanus_AY509696"   ,                    
+  "Coccyzus_americanus_HE793186","Coccyzus_americanus_U09265__CAU09265_",            
+ "Coccyzus_americanus_americanus_AY046910"  ,          
+ "Coccyzus_americanus_americanus_Minnesota_AF249270" , 
+ "Coccyzus_americanus_americanus_Minnesota_AF249271", 
+ "Coccyzus_americanus_Mexico_AY046908"   ,             
+  "Coccyzus_americanus_Mexico_AY046909"   ,             
+ "Coccyzus_americanus_NewMexico_AY046905")
+#true
+is.monophyletic(tree, "Coccyzus_americanus_occidentalis_Alaska_AF249268" ,  
+ "Coccyzus_americanus_occidentalis_Alaska_AF249269"   ,
+ "Coccyzus_americanus_occidentalis_NewMexico_AY046906",
+ "Coccyzus_americanus_occidentalis_NewMexico_AY046907")
+#true
+
+
+
+
+
+```
+
+

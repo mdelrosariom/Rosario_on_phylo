@@ -1,8 +1,9 @@
 library("readxl")
+library("writexl")
 ##function to get only the specific traits of the species included on the tree
 get_traits_tree <- function(tree, name_of_tree_2) { 
   #import the big ds that contains the data of all birds (more than 300)
-  species_traits <- read_excel("C:/Users/mdrmi/OneDrive/Escritorio/codes_phylo/traits_purified.xlsx") 
+  species_traits <- read_excel("C:/Users/mdrmi/OneDrive/Escritorio/codes_phylo/traits_purified_good_version.xlsx") 
   #name of the species
   species <- tree$tip.label
   traits_tree <- list()
