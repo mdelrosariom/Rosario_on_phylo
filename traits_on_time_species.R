@@ -4,7 +4,7 @@ library("phylobase")
 source("C:/Users/mdrmi/OneDrive/Escritorio/codes_phylo/tree_branch_finder.R")
 
 
-traits_time_species <- function(tree, species, res_species, colonization_time){
+traits_time_species <- function(tree, species, res_species, colonization_time,tree_name){
 
 tree_path <- as(tree, "phylo4d")
 
@@ -89,7 +89,10 @@ time_traits_species <-data.frame("BLC_mean" = combined_time_traits$BLC_mean,
                                              "time_tree" = closest_times,
                                              "theoretical_times" = sampling_times )
 
-write.xlsx(time_traits_species, paste("C:/Users/mdrmi/OneDrive/Escritorio/species_traits/time_traits",as.character(tree),"_", as.character(species), ".xlsx", sep = ""))
+file_path <- paste("C:/Users/mdrmi/OneDrive/Escritorio/species_traits/time_traits", as.character(tree_name), "_", as.character(species), ".xlsx", sep = "")
+
+
+write.xlsx(time_traits_species, file_path)
 return(time_traits_species)
 }
 
