@@ -1,0 +1,73 @@
+#NEXUS
+[R-package APE, Tue May  7 13:03:37 2024]
+
+BEGIN TAXA;
+	DIMENSIONS NTAX = 30;
+	TAXLABELS
+		Acridotheres_albocinctus
+		Acridotheres_cinereus
+		Acridotheres_fuscus
+		Acridotheres_grandis
+		Acridotheres_javanicus
+		Acridotheres_melanopterus
+		Acridotheres_tristis
+		Creatophora_cinerea
+		Fregilupus_varius
+		Gracula_religiosa
+		Lamprotornis_purpuroptera
+		Leucopsar_rothschildi
+		Onychognathus_walleri
+		Rhabdornis_mystacalis
+		Sturnus_albofrontatus
+		Sturnus_burmannicus
+		Sturnus_cineraceus
+		Sturnus_contra
+		Sturnus_erythropygius
+		Sturnus_malabaricus
+		Sturnus_nigricollis
+		Sturnus_pagodarum
+		Sturnus_philippensis
+		Sturnus_roseus
+		Sturnus_sericeus
+		Sturnus_sinensis
+		Sturnus_sturninus
+		Sturnus_unicolor
+		Sturnus.vulgaris.sp1
+		Sturnus.vulgaris.sp2
+	;
+END;
+BEGIN TREES;
+	TRANSLATE
+		1	Acridotheres_albocinctus,
+		2	Acridotheres_cinereus,
+		3	Acridotheres_fuscus,
+		4	Acridotheres_grandis,
+		5	Acridotheres_javanicus,
+		6	Acridotheres_melanopterus,
+		7	Acridotheres_tristis,
+		8	Creatophora_cinerea,
+		9	Fregilupus_varius,
+		10	Gracula_religiosa,
+		11	Lamprotornis_purpuroptera,
+		12	Leucopsar_rothschildi,
+		13	Onychognathus_walleri,
+		14	Rhabdornis_mystacalis,
+		15	Sturnus_albofrontatus,
+		16	Sturnus_burmannicus,
+		17	Sturnus_cineraceus,
+		18	Sturnus_contra,
+		19	Sturnus_erythropygius,
+		20	Sturnus_malabaricus,
+		21	Sturnus_nigricollis,
+		22	Sturnus_pagodarum,
+		23	Sturnus_philippensis,
+		24	Sturnus_roseus,
+		25	Sturnus_sericeus,
+		26	Sturnus_sinensis,
+		27	Sturnus_sturninus,
+		28	Sturnus_unicolor,
+		29	Sturnus.vulgaris.sp1,
+		30	Sturnus.vulgaris.sp2
+	;
+	TREE * UNTITLED = [&R] (((((((((((((1:0.2635134275,4:0.2635134275):0.2176293232,((2:0.1745070491,5:0.1745070491):0.05114587987,3:0.2256529289):0.2554898218):0.5215898624,(6:0.4841029057,16:0.4841029057):0.5186297076):0.5300781195,7:1.532810734):0.5544287344,25:2.087239467):0.2367004209,17:2.323939888):0.440307497,(((9:2.056546857,(((19:0.3691627113,20:0.3691627113):0.5774621518,22:0.9466248633):0.3549997322,26:1.301624595):0.7549222633):0.240611038,12:2.297157896):0.1783343492,15:2.475492245):0.2887551396):0.1931993067,24:2.957446693):0.2502052956,((18:2.15185281,21:2.151852809):0.3979286605,(23:0.7140176393,27:0.7140176393):1.83576383):0.6578705173):0.1052235024,8:3.312875489):1.741138361,((28:0.07394651441,29:0.07394651443):0.04440069102,30:0.1183472054):4.935666645):2.479081424,(11:6.186021915,13:6.186021914):1.347073362):1.87385086,(10:7.904176513,14:7.904176515):1.502769619):0;
+END;

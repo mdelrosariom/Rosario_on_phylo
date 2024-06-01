@@ -1,0 +1,145 @@
+#NEXUS
+[R-package APE, Fri Apr 26 17:36:58 2024]
+
+BEGIN TAXA;
+	DIMENSIONS NTAX = 66;
+	TAXLABELS
+		St._whiteheadi
+		Sy._atricapilla
+		Zosterops.a..socotrana.BW292
+		Zosterops.abyssinicus.flavilateralis.LK056723
+		Zosterops_albogularis
+		Zosterops_atricapilla
+		Zosterops_borbonicus
+		Zosterops_brunneus
+		Zosterops_chlorocephalus
+		Zosterops.chloronothus.MAURITIUS.BWM28
+		Zosterops.erythropleurus.DQ328391
+		Zosterops_explorator
+		Zosterops_feae
+		Zosterops_ficedulinus
+		Zosterops.flavifrons.flavifrons.AM946065
+		Zosterops.flavifrons.perplexa.AM946054
+		Zosterops_gibbsi
+		Zosterops_griseovirescens
+		Zosterops_inornatus
+		Zosterops.japonicus.batanis.AB239514
+		Zosterops_japonicus
+		Zosterops.japonicus.simplex.China.Taipei.AB248715
+		Zosterops.kikuyuensis.LK056757
+		Zosterops_kulalensis
+		Zosterops.kulalensis.LK056722
+		Zosterops_lateralis
+		Zosterops.lateralis.halmaturina.JN698755
+		Zosterops.lateralis.melanops.JN698758
+		Zosterops_lateralis_2
+		Zosterops.leucophaeus.SAOTOME.L535
+		Zosterops.lugubris.SAOTOME.DQ328403
+		Zosterops.luteus.balstoni.JN698779
+		Zosterops_aldabrensis
+		Zosterops_anjuanensis
+		Zosterops_comorensis
+		Zosterops_kirki
+		Zosterops_mayottensis
+		Zosterops_maderaspatanus
+		Zosterops_mauritianus
+		Zosterops_melanocephalus
+		Zosterops_minutus
+		Zosterops_modestus
+		Zosterops_montanus
+		Zosterops_mouroniensis
+		Zosterops_nigrorum
+		Zosterops_olivaceus
+		Zosterops_pallidus
+		Zosterops_palpebrosus
+		Zosterops.palpebrosus.palpebrosus.Nepal.DQ328349
+		Zosterops_poliogastra
+		Zosterops.poliogastrus.mbuluensis.LK056749
+		Zosterops_rennellianus
+		Zosterops_semiflavus
+		Zosterops_senegalensis
+		Zosterops.senegalensis.senegalensis.Ghana.DQ328343
+		Zosterops.senegalensis.Kenya.KX181888
+		Zosterops.senegalensis.LK056779
+		Zosterops.senegalensis.silvana.LK056706
+		Zosterops.senegalensis.stenocricotus.GU827228
+		Zosterops.senegalensis.stierlingi.LK056786
+		Zosterops_strenuus
+		Zosterops_tenuirostris
+		Zosterops.tephropleurus.JN698789
+		Zosterops.virens.LK056793
+		Zosterops_winifredae
+		Zosterops_xanthochroa
+	;
+END;
+BEGIN TREES;
+	TRANSLATE
+		1	St._whiteheadi,
+		2	Sy._atricapilla,
+		3	Zosterops.a..socotrana.BW292,
+		4	Zosterops.abyssinicus.flavilateralis.LK056723,
+		5	Zosterops_albogularis,
+		6	Zosterops_atricapilla,
+		7	Zosterops_borbonicus,
+		8	Zosterops_brunneus,
+		9	Zosterops_chlorocephalus,
+		10	Zosterops.chloronothus.MAURITIUS.BWM28,
+		11	Zosterops.erythropleurus.DQ328391,
+		12	Zosterops_explorator,
+		13	Zosterops_feae,
+		14	Zosterops_ficedulinus,
+		15	Zosterops.flavifrons.flavifrons.AM946065,
+		16	Zosterops.flavifrons.perplexa.AM946054,
+		17	Zosterops_gibbsi,
+		18	Zosterops_griseovirescens,
+		19	Zosterops_inornatus,
+		20	Zosterops.japonicus.batanis.AB239514,
+		21	Zosterops_japonicus,
+		22	Zosterops.japonicus.simplex.China.Taipei.AB248715,
+		23	Zosterops.kikuyuensis.LK056757,
+		24	Zosterops_kulalensis,
+		25	Zosterops.kulalensis.LK056722,
+		26	Zosterops_lateralis,
+		27	Zosterops.lateralis.halmaturina.JN698755,
+		28	Zosterops.lateralis.melanops.JN698758,
+		29	Zosterops_lateralis_2,
+		30	Zosterops.leucophaeus.SAOTOME.L535,
+		31	Zosterops.lugubris.SAOTOME.DQ328403,
+		32	Zosterops.luteus.balstoni.JN698779,
+		33	Zosterops_aldabrensis,
+		34	Zosterops_anjuanensis,
+		35	Zosterops_comorensis,
+		36	Zosterops_kirki,
+		37	Zosterops_mayottensis,
+		38	Zosterops_maderaspatanus,
+		39	Zosterops_mauritianus,
+		40	Zosterops_melanocephalus,
+		41	Zosterops_minutus,
+		42	Zosterops_modestus,
+		43	Zosterops_montanus,
+		44	Zosterops_mouroniensis,
+		45	Zosterops_nigrorum,
+		46	Zosterops_olivaceus,
+		47	Zosterops_pallidus,
+		48	Zosterops_palpebrosus,
+		49	Zosterops.palpebrosus.palpebrosus.Nepal.DQ328349,
+		50	Zosterops_poliogastra,
+		51	Zosterops.poliogastrus.mbuluensis.LK056749,
+		52	Zosterops_rennellianus,
+		53	Zosterops_semiflavus,
+		54	Zosterops_senegalensis,
+		55	Zosterops.senegalensis.senegalensis.Ghana.DQ328343,
+		56	Zosterops.senegalensis.Kenya.KX181888,
+		57	Zosterops.senegalensis.LK056779,
+		58	Zosterops.senegalensis.silvana.LK056706,
+		59	Zosterops.senegalensis.stenocricotus.GU827228,
+		60	Zosterops.senegalensis.stierlingi.LK056786,
+		61	Zosterops_strenuus,
+		62	Zosterops_tenuirostris,
+		63	Zosterops.tephropleurus.JN698789,
+		64	Zosterops.virens.LK056793,
+		65	Zosterops_winifredae,
+		66	Zosterops_xanthochroa
+	;
+	TREE * UNTITLED = [&R] ((((((((((31:1.36124543,(14:1.063396083,30:1.063396084):0.2978493469):0.176706379,18:1.537951808):0.2662455924,13:1.804197401):1.138045364,3:2.942242766):0.4760674832,(((((((24:0.1798919259,54:0.1798919258):0.06499785409,56:0.2448897798):0.475807392,55:0.7206971721):0.4151897111,25:1.135886883):0.493270382,23:1.629157265):0.8698885204,((8:1.299182888,59:1.299182888):0.656800233,(40:1.287065435,50:1.287065435):0.6689176866):0.5430626642):0.2381549018,57:2.737200688):0.6811095601):0.1963627889,((4:0.8352434448,51:0.8352434454):2.172167673,(((((60:0.600933171,64:0.600933171):0.09773476835,65:0.6986679396):0.9165134255,58:1.615181365):0.3057646184,47:1.920945985):0.5468558249,((33:1.417350083,((38:1.118661429,((34:0.9557193738,36:0.9557193732):0.09900548609,35:1.05472486):0.06393656911):0.1106414799,37:1.229302908):0.1880471746):0.3394722728,42:1.756822355):0.7109794535):0.5396093083):0.607261919):0.3076757917,(((((7:1.008139218,39:1.008139217):0.9666707736,(10:1.152169868,46:1.152169868):0.822640123):0.5690034727,44:2.543813463):0.3635320002,53:2.907345464):0.6484880161,49:3.555833479):0.3665153481):0.5952767588,(((((((((5:1.098268257,52:1.098268257):0.2664794507,62:1.364747708):0.2392766669,(19:0.7507007819,61:0.7507007825):0.8533235924):0.8140283586,15:2.418052733):0.1609033102,(((((9:0.099357668,29:0.09935766801):0.6864463797,66:0.7858040481):0.04213271593,63:0.8279367636):0.2759569567,(28:0.3043209335,32:0.3043209336):0.7995727871):0.5798204885,(26:0.7175819885,27:0.7175819886):0.9661322205):0.8952418343):0.2771939492,12:2.856149993):0.2556613089,(16:1.928079471,17:1.928079471):1.18373183):0.323482347,(22:3.031329245,((20:0.8927792395,(21:0.6280413874,43:0.6280413877):0.2647378518):0.9059883718,41:1.79876761):1.232561634):0.403964404):0.3887827556,((6:2.250394702,11:2.250394703):1.237294817,(45:2.920914971,48:2.92091497):0.5667745495):0.3363868838):0.6935491835):7.916997112,1:12.4346227):49.60114262,2:62.03576526):0;
+END;

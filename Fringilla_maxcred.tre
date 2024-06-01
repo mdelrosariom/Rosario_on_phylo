@@ -1,0 +1,29 @@
+#NEXUS
+[R-package APE, Tue Apr  9 18:50:07 2024]
+
+BEGIN TAXA;
+	DIMENSIONS NTAX = 8;
+	TAXLABELS
+		Fringilla_coelebs
+		Fringilla_coelebs_canariensis
+		Fringilla_coelebs_maderensis
+		Fringilla_coelebs_moreletti
+		Fringilla_coelebs_ombriosa
+		Fringilla_coelebs_palmae
+		Fringilla_montifringilla
+		Fringilla_teydea
+	;
+END;
+BEGIN TREES;
+	TRANSLATE
+		1	Fringilla_coelebs,
+		2	Fringilla_coelebs_canariensis,
+		3	Fringilla_coelebs_maderensis,
+		4	Fringilla_coelebs_moreletti,
+		5	Fringilla_coelebs_ombriosa,
+		6	Fringilla_coelebs_palmae,
+		7	Fringilla_montifringilla,
+		8	Fringilla_teydea
+	;
+	TREE * UNTITLED = [&R] (((1:1.338009524,((((6:0.3146707307,5:0.3146707308):0.2724468193,2:0.58711755):0.339188537,3:0.9263060871):0.1745197912,4:1.100825878):0.237183646):1.667879668,8:3.005889191):0.958430453,7:3.964319645):0;
+END;

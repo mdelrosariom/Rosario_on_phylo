@@ -21,3 +21,36 @@ DUMMIE VARIABLES FOR THE AREA, INSOLATION, ETC. (that will also affect, but we w
 
 21/02
 7. to employ ATE we need the .csv with the data and the sps in the tree to have the same names, there is not the case because there are like 10000 different species equal in valente that are not even monophyletic so i cant prune it. i should change the name of the traits and the phylogeny to match? i dont know how this will interfire with the processes. 
+
+06/03
+
+we will use the same rate of evo for all the species inside the tree? 
+
+########################
+23 red direct ATR Error in h(simpleError(msg, call)) : 
+  error in evaluating the argument 'x' in selecting a method for function 't': the leading minor of order 3 is not positive
+Also networks without any information on traits
+
+bem "Setophaga_petechia_maxcred_Lerner_rate.tre"?? species name>
+all_trees[[27]]
+[1] "Setophaga_petechia_maxcred_rate_of_cytb.tre"
+
+
+which tree i use?? citocrome or lener?
+
+ error in evaluating the argument 'x' in selecting a method for function 't': the leading minor of order 3 is not positive wg in "Vidua_maxcred.tre"
+what to do when you have multiple subspecies?? let them all in
+
+
+#FOR BEN, IF A SPECIES IS A CONTINENTAL ONE, E.G. ANTUS_SIMILIS_KENYA, OR ISRAEL, CAN I TAKE THEM OUT??
+
+#-------------------------------------------------------------------------------------------------------------
+9 04 
+for H, 
+good way of calculation var-cov matrix in erithaaucus?? e.g. 
+morphospace? dynamics
+#---------------------------
+QUESTIONS FOR BEN 
+COLONISATION TIMES, BRANCHING TIMES, CLADOGENESIS IN TABLE, WHAT DOES THAT MEANS? 
+
+

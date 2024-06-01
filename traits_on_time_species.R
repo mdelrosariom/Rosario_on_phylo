@@ -72,7 +72,7 @@ traits_in_time_species <- list()
 
 for (time in closest_times){
   index <- which(times_species == time)
-  print(index)
+  
   
   trait_time <- species_traits[index,]
   

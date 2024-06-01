@@ -125,15 +125,20 @@ mvbrownian_path <- function(data, phy, sigma=1, steps=0.1, stochastic=FALSE, plo
   
   # loop across the branches
   for(i in 1:nrow(tr$edge)){
+    
     bl <- tr$edge.length[i]
+    
     dt <- seq(from=0, to=bl, by=steps)
+    
     # Expected trajectory under the Brownian bridge
     expected_trajectory <- matrix(bm(dt, data[tr$edge[i,1], 1:p], data[tr$edge[i,2], 1:p], bl), ncol=p, byrow = TRUE)
     
     if(stochastic){
       
       expected_variance <- bm_var(Ages[i]+dt,t1=Ages[i], t2=Ages[i]+bl) 
+      
       samples_bl = matrix(rnorm(length(dt)*p, sd=rep(expected_variance^0.5,p)), nrow=p, byrow = TRUE)
+      
       paths_list[[i]] <- expected_trajectory + t(sqrtSigma%*%samples_bl)
     }else{
       paths_list[[i]] <- expected_trajectory 

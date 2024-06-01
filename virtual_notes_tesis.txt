@@ -43,7 +43,25 @@ in rodrigues DLSODES- Warning..Internal T (=R1) and H (=R2) are
      (H = step size). Solver will continue anyway.
 In above message, R1 = -8.61, R2 = 3.77331e-16
 
+## 21/02/24
 
+alaudidae_tree -> "Acrocephalus_aedon_AF094623","Acrocephalus_aedon_AJ004778","Acrocephalus_aedon_FJ883020", "Acrocephalus_aedon_HQ608854"  NOT MONOPHYLETIC
+
+
+ 28. 03 IN Terpsiphone I DELETED FOLLOWING CODES BECAUSE THEY DONT APEAR IN THE PAPER IN WHICH WE ARE BASING OUR STUDY     
+ [2] "Terpsiphone_paradisi_EF081356"            
+           
+ [4] "Terpsiphone_paradisi_KP036641"            
+ [5] "Terpsiphone_paradisi_KP036736"
+
+NO VOY A USAR TODOS LOS DE VALENTE BECAUSE NO LOS NECESITO Y ME BASO EN EL OTRO PAPER 
+
+
+QUESTIONS HELENEN 4 4 
+
+1. what should i do with the non sampling pheno
+2. LENER OR CITOCROME B 
+3. what i should do with islands w/o sampling pheno
 
 
 

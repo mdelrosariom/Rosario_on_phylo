@@ -237,7 +237,7 @@ get_traits_tree <- function(tree, name_of_tree) {
   }
   
   tree_name <- sub('\\.tree$', '', name_of_tree)
-  file_name <- paste("C:/Users/mdrmi/OneDrive/Escritorio/tree_trait/", "trait_", tree_name, ".xlsx")
+  file_name <- paste("C:/Users/mdrmi/OneDrive/Escritorio/fixed_traits/", "trait_", tree_name, ".xlsx", sep ="")
   
   # Combine the list of data frames into a single data frame
   traits_tree <- do.call(rbind, traits_tree)

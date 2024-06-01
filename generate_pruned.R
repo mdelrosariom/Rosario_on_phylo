@@ -18,7 +18,7 @@ new_pruned <- function(tree_analyzed, name_of_tree) {
   
   #and save it
   tree_name <- sub('\\.tree$', '', name_of_tree) 
-  file_name <- paste("C:/Users/mdrmi/OneDrive/Escritorio/trees_reunion_703/", tree_name, "_pruned.tree", sep = "")
+  file_name <- paste("C:/Users/mdrmi/OneDrive/Documents/MEGA/trees_reunion_703", tree_name, "_pruned.tree", sep = "")
   writeNexus(Y_tree, file = file_name)
   return(Y_tree)
 }
